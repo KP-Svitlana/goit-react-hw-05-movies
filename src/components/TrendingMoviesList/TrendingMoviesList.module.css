@@ -1,0 +1,11 @@
+.trendingList__title {
+  margin-left: 10px;
+}
+
+.trendingList__item {
+  margin-bottom: 5px;
+}
+
+.trendingList__item:last-child {
+  margin-bottom: 0;
+}
