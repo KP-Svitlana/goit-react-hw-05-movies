@@ -1,11 +1,22 @@
+import { NavLink } from 'react-router-dom';
 import css from './Header.module.css';
 
 const Header = () => {
   return (
-    <div className={css.btb__wrap}>
-      <button className={css.btn}>Home</button>
-      <button className={css.btn}>Movies</button>
-    </div>
+    <nav className={css.header__wrap}>
+      <NavLink
+        to="/"
+        className={({ isActive }) => (isActive ? css.active : css.header__link)}
+      >
+        Home
+      </NavLink>
+      <NavLink
+        to="/movies"
+        className={({ isActive }) => (isActive ? css.active : css.header__link)}
+      >
+        Movies
+      </NavLink>
+    </nav>
   );
 };
 

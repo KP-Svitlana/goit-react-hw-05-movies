@@ -1,4 +1,4 @@
-.btb__wrap {
+.header__wrap {
   display: flex;
   flex-direction: row;
   padding-left: 30px;
@@ -7,12 +7,17 @@
   border-bottom: 1px solid #000;
 }
 
-.btn {
+.header__link {
   color: black;
   font-size: 16px;
   margin-right: 10px;
 }
 
-.btn:last-child {
+.active {
+  color: orange;
+  margin-right: 10px;
+}
+
+.header__link:last-child {
   margin-right: 0;
 }

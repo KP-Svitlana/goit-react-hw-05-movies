@@ -1,6 +1,9 @@
 import css from './TrendingMoviesList.module.css';
 import { useState, useEffect } from 'react';
 import { trendingMovieToday } from 'components/API/API';
+import { Link } from 'react-router-dom';
+
+const IMB_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
 const TrendingMoviesList = () => {
   const [trendingList, setTrendingList] = useState([]);
@@ -8,7 +11,6 @@ const TrendingMoviesList = () => {
   useEffect(() => {
     async function fetchTrendingMovies() {
       const response = await trendingMovieToday().then(result => result.data);
-      console.log(response);
       setTrendingList(response.results);
     }
     fetchTrendingMovies();
@@ -18,10 +20,17 @@ const TrendingMoviesList = () => {
     <>
       <h1 className={css.trendingList__title}>Trending today</h1>
       <ul className={css.trendingList__list}>
-        {trendingList.map(el => {
+        {trendingList.map(({ poster_path, id, original_title, title }) => {
           return (
-            <li key={el.id} className={css.trendingList__item}>
-              {el.title}
+            <li key={id} className={css.trendingList__item}>
+              <Link className={css.trendingList__link}>
+                <img
+                  src={IMB_BASE_URL + poster_path}
+                  alt={original_title}
+                  className={css.trendingList__img}
+                />
+                <p className={css.trendingList__name}>{title}</p>
+              </Link>
             </li>
           );
         })}
