@@ -1,17 +1,12 @@
-import { useState } from 'react';
 import css from './SearchForm.module.css';
 
-const SearchForm = () => {
-  const [query, setQuery] = useState('');
-
+const SearchForm = ({ onFormSabmit }) => {
   const onSearchFormSubmit = event => {
     event.preventDefault();
-    setQuery(event.target.elements.input.value);
+    const query = event.target.elements.input.value;
+    onFormSabmit(query);
+    event.target.reset();
   };
-
-  //   const handlerInput = event => {
-  //     console.log(event);
-  //   };
 
   return (
     <form className={css.searchForm} onSubmit={onSearchFormSubmit}>
@@ -19,11 +14,9 @@ const SearchForm = () => {
         className={css.searchForm__input}
         type="text"
         name="input"
-        // value={query}
         autoComplete="off"
         autoFocus
         placeholder="Search movies"
-        // onChange={handlerInput}
       />
 
       <button type="submit" className={css.searchForm__btn}>
