@@ -9,13 +9,9 @@ const Cast = () => {
   const [castInfo, setCastInfo] = useState([]);
   const { id } = useParams();
 
-  console.log(id);
-
   useEffect(() => {
     getSerchByCredits(id).then(result => setCastInfo(result.data.cast));
   }, [id]);
-
-  console.log(castInfo);
 
   return (
     <section className={css.cast}>
@@ -23,9 +19,13 @@ const Cast = () => {
         {castInfo
           ? castInfo.map(el => {
               return (
-                <li className={css.cast__item}>
+                <li className={css.cast__item} key={el.credit_id}>
                   <img
-                    src={IMB_BASE_URL + el.profile_path}
+                    src={
+                      el.profile_path !== null
+                        ? IMB_BASE_URL + el.profile_path
+                        : 'https://ih1.redbubble.net/image.512138487.5983/fposter,small,wall_texture,product,750x1000.u3.jpg'
+                    }
                     className={css.cast__img}
                     alt={el.name}
                   />

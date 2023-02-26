@@ -1,4 +1,8 @@
 .ditails {
+  margin-top: 20px;
+}
+
+.wrap {
   display: flex;
   gap: 20px;
   margin-top: 20px;

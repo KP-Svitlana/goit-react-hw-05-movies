@@ -13,18 +13,18 @@ const Reviews = () => {
 
   return (
     <section className={css.reviews}>
-      {reviews.length > 0 &&
-        reviews.map(el => {
-          return (
-            <ul className={css.reviews_list}>
-              <li>
+      <ul className={css.reviews_list}>
+        {reviews.length > 0 &&
+          reviews.map(el => {
+            return (
+              <li key={el.id}>
                 <h3 className={css.reviews_title}>Author: {el.author}</h3>
                 <p className={css.reviews_text}>{el.content}</p>
               </li>
-            </ul>
-          );
-        })}
-      {reviews.length === 0 && 'We don`t have any reviews for this movie.'}
+            );
+          })}
+        {reviews.length === 0 && 'We don`t have any reviews for this movie.'}
+      </ul>
     </section>
   );
 };
