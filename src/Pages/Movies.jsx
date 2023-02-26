@@ -3,12 +3,17 @@ import GalleryMovies from 'components/GalleryMovies/GalleryMovies';
 import Header from 'components/Header/Header';
 import SearchForm from 'components/SearchForm/SearchForm';
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 const Movies = () => {
   const [moviesData, setMoviesData] = useState([]);
-  const [query, setQuery] = useState('');
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get('query');
 
   useEffect(() => {
+    if (!query) return;
+
     async function serchByQuery() {
       const response = await getSerchByQuery(query).then(result => result.data);
       setMoviesData(response.results);
@@ -17,14 +22,14 @@ const Movies = () => {
   }, [query]);
 
   function getSerchFilmsByQuery(query) {
-    setQuery(query);
+    setSearchParams(query !== '' ? { query: query } : {});
   }
 
   return (
     <>
       <Header />
       <SearchForm onFormSabmit={getSerchFilmsByQuery} />
-      <GalleryMovies data={moviesData} />
+      {query && <GalleryMovies data={moviesData} />}
     </>
   );
 };

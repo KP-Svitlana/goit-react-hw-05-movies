@@ -1,9 +1,6 @@
-import { useSearchParams } from 'react-router-dom';
 import css from './SearchForm.module.css';
 
 const SearchForm = ({ onFormSabmit }) => {
-  const [setSearchParams] = useSearchParams();
-
   const onSearchFormSubmit = event => {
     event.preventDefault();
     onFormSabmit(event.target.elements.input.value);
@@ -19,7 +16,6 @@ const SearchForm = ({ onFormSabmit }) => {
         autoComplete="off"
         autoFocus
         placeholder="Search movies"
-        onChange={e => setSearchParams({ name: e.target.value })}
       />
 
       <button type="submit" className={css.searchForm__btn}>

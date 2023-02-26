@@ -4,7 +4,6 @@ import css from './GalleryMovies.module.css';
 const IMB_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
 const GalleryMovies = ({ data }) => {
-  console.log(data);
   return (
     <>
       <ul className={css.gallery__list}>
