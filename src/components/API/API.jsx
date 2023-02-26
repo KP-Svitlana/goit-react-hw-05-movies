@@ -14,3 +14,11 @@ export const getSerchByQuery = query => {
 export const getSerchById = id => {
   return axios.get(`movie/${id}?api_key=${API_KEY}`);
 };
+
+export const getSerchByCredits = id => {
+  return axios.get(`movie/${id}/credits?api_key=${API_KEY}`);
+};
+
+export const getSerchByReviews = id => {
+  return axios.get(`movie/${id}reviews?api_key=${API_KEY}`);
+};
