@@ -16,7 +16,7 @@ const MovieDitails = () => {
   const { title, poster_path, overview, genres, vote_average } = movieData;
 
   return (
-    <div className={css.ditails}>
+    <section className={css.ditails}>
       <img
         className={css.ditails__img}
         src={IMB_BASE_URL + poster_path}
@@ -32,7 +32,7 @@ const MovieDitails = () => {
           {genres ? genres.map(el => el.name).join(' ') : ''}
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 

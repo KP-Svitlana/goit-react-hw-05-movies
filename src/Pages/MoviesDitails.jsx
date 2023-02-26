@@ -1,13 +1,11 @@
-const { default: Header } = require('components/Header/Header');
-const {
-  default: MovieDitails,
-} = require('components/MovieDitails/MovieDitails');
+import AddInfo from 'components/AddInfo/AddInfo';
+import MovieDitails from 'components/MovieDitails/MovieDitails';
 
 const MoviesDitails = () => {
   return (
     <>
-      <Header />
       <MovieDitails />
+      <AddInfo />
     </>
   );
 };

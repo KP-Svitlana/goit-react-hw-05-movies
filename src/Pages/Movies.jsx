@@ -1,6 +1,5 @@
 import { getSerchByQuery } from 'components/API/API';
 import GalleryMovies from 'components/GalleryMovies/GalleryMovies';
-import Header from 'components/Header/Header';
 import SearchForm from 'components/SearchForm/SearchForm';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
@@ -27,7 +26,6 @@ const Movies = () => {
 
   return (
     <>
-      <Header />
       <SearchForm onFormSabmit={getSerchFilmsByQuery} />
       {query && <GalleryMovies data={moviesData} />}
     </>
