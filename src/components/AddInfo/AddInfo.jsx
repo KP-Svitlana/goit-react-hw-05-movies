@@ -7,10 +7,10 @@ const AddInfo = () => {
       <h3 className={css.addInfo__title}> Additional information</h3>
       <ul>
         <li>
-          <Link>Cast</Link>
+          <Link to="cast">Cast</Link>
         </li>
         <li>
-          <Link>Reviews</Link>
+          <Link to="reviews">Reviews</Link>
         </li>
       </ul>
     </section>
