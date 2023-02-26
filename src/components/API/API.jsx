@@ -10,3 +10,7 @@ export const trendingMovieToday = () => {
 export const getSerchByQuery = query => {
   return axios.get(`/search/movie?api_key=${API_KEY}&query=${query}`);
 };
+
+export const getSerchById = id => {
+  return axios.get(`movie/${id}?api_key=${API_KEY}`);
+};

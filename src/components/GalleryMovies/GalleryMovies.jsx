@@ -10,7 +10,7 @@ const GalleryMovies = ({ data }) => {
         {data.map(({ poster_path, id, original_title, title }) => {
           return (
             <li key={id} className={css.gallery__item}>
-              <Link className={css.gallery__link}>
+              <Link to={`/movies/${id}`} className={css.gallery__link}>
                 <img
                   src={IMB_BASE_URL + poster_path}
                   alt={original_title}
