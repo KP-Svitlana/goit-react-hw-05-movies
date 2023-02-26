@@ -20,5 +20,5 @@ export const getSerchByCredits = id => {
 };
 
 export const getSerchByReviews = id => {
-  return axios.get(`movie/${id}reviews?api_key=${API_KEY}`);
+  return axios.get(`movie/${id}/reviews?api_key=${API_KEY}`);
 };

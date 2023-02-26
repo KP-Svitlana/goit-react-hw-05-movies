@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <nav className={css.header__wrap}>
       <NavLink
-        to="/home"
+        to="/"
         className={({ isActive }) => (isActive ? css.active : css.header__link)}
       >
         Home

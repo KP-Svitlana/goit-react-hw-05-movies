@@ -1,0 +1,16 @@
+.reviews {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.reviews_list {
+  list-style: none;
+}
+
+.reviews_title {
+  font-size: 20px;
+}
+
+.reviews_text {
+  margin: 0;
+}
