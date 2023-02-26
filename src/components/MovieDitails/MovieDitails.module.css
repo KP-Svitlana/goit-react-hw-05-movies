@@ -1,0 +1,14 @@
+.ditails {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.ditails__img {
+  width: 320px;
+  height: auto;
+}
+
+.ditails__text {
+  margin: 0;
+}

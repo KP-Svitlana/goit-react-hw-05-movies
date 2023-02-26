@@ -1,13 +1,15 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+const { default: Header } = require('components/Header/Header');
+const {
+  default: MovieDitails,
+} = require('components/MovieDitails/MovieDitails');
 
 const MoviesDitails = () => {
-  const [movieData, setMovieData] = useState({});
-  const { id } = useParams();
-
-  useEffect(() => {}, []);
-
-  return <>Movies ditails {id}</>;
+  return (
+    <>
+      <Header />
+      <MovieDitails />
+    </>
+  );
 };
 
 export default MoviesDitails;
