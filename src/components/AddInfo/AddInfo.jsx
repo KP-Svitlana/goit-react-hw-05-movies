@@ -8,12 +8,15 @@ const AddInfo = () => {
       <h3 className={css.addInfo__title}> Additional information</h3>
       <ul>
         <li>
-          <Link to="cast" state={{ from: location.state.from }}>
+          <Link to="cast" state={{ from: location.state?.from ?? '/cast' }}>
             Cast
           </Link>
         </li>
         <li>
-          <Link to="reviews" state={{ from: location.state.from }}>
+          <Link
+            to="reviews"
+            state={{ from: location.state?.from ?? '/reviews' }}
+          >
             Reviews
           </Link>
         </li>
